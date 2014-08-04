@@ -1,0 +1,14 @@
+{
+  "name": "img-handler-server",
+  "version": "0.0.1",
+  "description": "a image handler server",
+  "author": "Rodrigo Alviani <rodrigoalviani@gmail.com> (https://github.com/rodrigoalviani)",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "request": "*",
+    "express": "*",
+    "gm": "*",
+    "underscore": "*"
+  }
+}
