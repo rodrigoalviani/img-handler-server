@@ -9,7 +9,7 @@ var express = require('express')
   s:  strategy    [bounded, matted, fill, strict] [defaul: bounded]
   w:  width       [default: 100]
   h:  height      [default: 100
-  q:  quality     [default: null]
+  q:  quality     [default: 75]
   g:  gravity     [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast] [default: Center]
   b:  background  [default: black]
   */
