@@ -17,6 +17,8 @@ var express = require('express')
 app.get(/(.+)/, function(req, res) {
   var url = req.params[0].substring(1, req.params[0].length);
 
+  if (url.substring(0, 4) != 'http') return false;
+
   if (!req.query.w && req.query.h) req.query.w = req.query.h;
   if (req.query.w && !req.query.h) req.query.h = req.query.w;
 
