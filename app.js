@@ -1,26 +1,33 @@
-var express = require('express')
-  , request = require('request')
-  , handler = require('./lib/handler')
-  , _ = require('underscore')
-  , app = express();
+var express = require('express'),
+  request = require('request'),
+  handler = require('./lib/handler'),
+  _ = require('underscore'),
+  app = express();
 
   /*
   Possible querystrings
-  s:  strategy    [bounded, matted, fill, strict] [defaul: bounded]
+  s:  strategy    [bounded, matted, fill, strict] [default: bounded]
   w:  width       [default: 100]
-  h:  height      [default: 100
+  h:  height      [default: 100]
   q:  quality     [default: 75]
   g:  gravity     [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast] [default: Center]
   b:  background  [default: black]
   */
 
-app.get(/(.+)/, function(req, res) {
+app.get(/(.+)/, function (req, res) {
   var url = req.params[0].substring(1, req.params[0].length);
 
-  if (url.substring(0, 4) != 'http') return false;
+  if (url.substring(0, 4) !== 'http') {
+    return false;
+  }
 
-  if (!req.query.w && req.query.h) req.query.w = req.query.h;
-  if (req.query.w && !req.query.h) req.query.h = req.query.w;
+  if (!req.query.w && req.query.h) {
+    req.query.w = req.query.h;
+  }
+
+  if (req.query.w && !req.query.h) {
+    req.query.h = req.query.w;
+  }
 
   var options = {
       s: 'bounded',
@@ -33,13 +40,17 @@ app.get(/(.+)/, function(req, res) {
   _.extend(options, req.query);
 
   request({ url: url })
-    .on('response', function(img) {
+    .on('response', function (img) {
       handler(img, options, function (err, str) {
-        str.pipe(res);
+        if (err) {
+          console.log(err);
+        } else {
+          str.pipe(res);
+        }
       });
     });
 });
 
-app.listen(3000, function(){
-    console.log('server listen port 3000');
+app.listen(3000, function () {
+  console.log('server listen port 3000');
 });
