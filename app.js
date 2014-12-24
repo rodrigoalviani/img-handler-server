@@ -34,8 +34,7 @@ app.get(/(.+)/, function (req, res) {
       w: 100,
       h: 100,
       g: 'Center',
-      b: 'black',
-      q: 75
+      b: 'black'
     };
 
   _.extend(options, req.query);
