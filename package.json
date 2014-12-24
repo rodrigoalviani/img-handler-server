@@ -1,6 +1,6 @@
 {
   "name": "img-handler-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a image handler server",
   "author": "Rodrigo Alviani <rodrigoalviani@gmail.com> (https://github.com/rodrigoalviani)",
   "main": "app.js",
