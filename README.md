@@ -39,4 +39,5 @@ Options (QueryStrings)
   q:  quality     [default: null]
   g:  gravity     [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast] [default: Center]
   b:  background  [default: black]
+  f:  filter      [grayscale, sepia, negate]
 ```
