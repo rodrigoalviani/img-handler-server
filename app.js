@@ -6,13 +6,14 @@ var express = require('express'),
 
   /*
   Possible querystrings
-  s:  strategy    [bounded, matted, fill, strict] [default: bounded]
-  w:  width       [default: 100]
-  h:  height      [default: 100]
-  q:  quality     [default: 75]
-  g:  gravity     [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast] [default: Center]
-  b:  background  [default: black]
-  f:  filter      [grayscale, sepia, negate, lomo, gotham]
+  s:  strategy        [default: bounded] [bounded, matted, fill, strict]
+  w:  width           [default: 100]
+  h:  height          [default: 100]
+  q:  quality         [default: 75]
+  g:  gravity         [default: Center] [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast]
+  b:  background      [default: black]
+  f:  filter          [default: null] [grayscale, sepia, negate, lomo, gotham, hue]
+  f:  filter variable [default: null] [on hue 0 to 255]
   */
 
 app.get(/(.+)/, function (req, res) {
