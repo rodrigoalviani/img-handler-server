@@ -13,7 +13,7 @@ var express = require('express'),
   g:  gravity         [default: Center] [NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast]
   b:  background      [default: black]
   f:  filter          [default: null] [grayscale, sepia, negate, lomo, gotham, hue]
-  f:  filter variable [default: null] [on hue 0 to 255]
+  f:  filter variable [default: null] [on hue 0 to 360]
   */
 
 app.get(/(.+)/, function (req, res) {

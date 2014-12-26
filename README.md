@@ -41,4 +41,4 @@ q | quality | quality of generated image | null | 0 to 100
 g | gravity | where to cut a image - if applicable | Center | NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast
 b | background | background color (for matted strategy) | black | all colors
 f | filter | image color filter | null | grayscale, sepia, negate, lomo, gotham, hue
-fv | filter variable | variable to use with filter | null | on hue 0 to 255
+fv | filter variable | variable to use with filter | null | on hue 0 to 360
