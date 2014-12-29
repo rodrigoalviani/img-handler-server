@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express'),
   request = require('request'),
   handler = require('./lib/handler'),
