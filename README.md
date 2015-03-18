@@ -1,7 +1,7 @@
 img-handler-server
 ==================
 
-A minimalist node.js image handler server
+A minimalist node.js image handler server to resize, crop, apply filters and more...
 
 Install
 -------
